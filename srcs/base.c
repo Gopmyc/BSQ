@@ -6,7 +6,7 @@
 /*   By: ghoyaux <ghoyaux@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/26 15:29:29 by ghoyaux           #+#    #+#             */
-/*   Updated: 2024/08/27 19:31:14 by ghoyaux          ###   ########.fr       */
+/*   Updated: 2024/08/27 20:58:57 by ghoyaux          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -98,8 +98,8 @@ struct s_resolve	ft_resolve_array(int size, int **array,
 						array[j][i - 1], array[j - 1][i - 1]) + 1;
 			if (array[j][i] > resolve.max)
 			{
-				resolve.x = j - array[j][i];
-				resolve.y = i - array[j][i];
+				resolve.x = i - (array[j][i] - 1);
+				resolve.y = j - (array[j][i] - 1);
 				resolve.max = array[j][i];
 			}
 			i++;
@@ -112,8 +112,8 @@ struct s_resolve	ft_resolve_array(int size, int **array,
 void	ft_write_resolve(int size, int **array,
 			struct s_resolve resolve, struct s_map ref)
 {
-	int	i;
-	int	j;
+	int		i;
+	int		j;
 
 	j = 0;
 	while (j < size)

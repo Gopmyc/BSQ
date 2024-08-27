@@ -6,7 +6,7 @@
 /*   By: ghoyaux <ghoyaux@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/26 15:02:27 by ghoyaux           #+#    #+#             */
-/*   Updated: 2024/08/27 19:13:49 by ghoyaux          ###   ########.fr       */
+/*   Updated: 2024/08/27 19:42:01 by ghoyaux          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,8 @@ struct s_map
 
 /* Declaration of debug.c functions [temporary things]*/
 void				ft_print_array(int size, int	**array);
+void				ft_print_array_clean(int size, int	**array,
+						struct s_resolve resolve);
 
 /* Decalaration of utils.c functions */
 int					ft_strlen(char *str);

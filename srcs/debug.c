@@ -1,35 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   utils2.c                                           :+:      :+:    :+:   */
+/*   debug.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ghoyaux <ghoyaux@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/27 18:08:29 by ghoyaux           #+#    #+#             */
-/*   Updated: 2024/08/27 18:08:31 by ghoyaux          ###   ########.fr       */
+/*   Created: 2024/08/26 21:35:33 by ghoyaux           #+#    #+#             */
+/*   Updated: 2024/08/26 21:55:08 by ghoyaux          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/bsq.h"
 
-int	ft_min3(int a, int b, int c)
+void	ft_print_array(int size, int	**array)
 {
-	int	min_ab;
+	char	c;
+	int		i;
+	int		j;
 
-	if (a < b)
+	i = 0;
+	j = 0;
+	while (j < size)
 	{
-		min_ab = a;
-	}
-	else
-	{
-		min_ab = b;
-	}
-	if (min_ab < c)
-	{
-		return (min_ab);
-	}
-	else
-	{
-		return (c);
+		i = 0;
+		while (i < size)
+		{
+			c = array[i][j] + '0';
+			write(1, &c, sizeof(char));
+			write(1, ", ", (3 * sizeof(char)));
+			i++;
+		}
+		write(1, "\n", sizeof(char));
+		j++;
 	}
 }

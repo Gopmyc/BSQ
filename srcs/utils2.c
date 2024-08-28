@@ -6,7 +6,7 @@
 /*   By: ghoyaux <ghoyaux@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/27 18:08:29 by ghoyaux           #+#    #+#             */
-/*   Updated: 2024/08/27 18:50:23 by ghoyaux          ###   ########.fr       */
+/*   Updated: 2024/08/28 16:25:01 by ghoyaux          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,4 +84,34 @@ int	**ft_allocate_map(int size)
 		i++;
 	}
 	return (array);
+}
+
+int	ft_check_line_map(char *str)
+{
+	int long	count;
+	int			i;
+
+	count = 0;
+	i = 0;
+	while (str[i])
+	{
+		if (str[i] == '\n')
+			count++;
+		i++;
+	}
+	return ((i % count) == 0);
+}
+
+int	all_line_valid(char *str, struct s_map ref)
+{
+	int	i;
+
+	i = 0;
+	while (str[i])
+	{
+		if (str[i] == ref.char_obs)
+			return (1);
+		i++;
+	}
+	return (0);
 }

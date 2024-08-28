@@ -6,7 +6,7 @@
 /*   By: ghoyaux <ghoyaux@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/26 15:02:27 by ghoyaux           #+#    #+#             */
-/*   Updated: 2024/08/27 19:42:01 by ghoyaux          ###   ########.fr       */
+/*   Updated: 2024/08/28 21:26:29 by ghoyaux          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,11 +32,6 @@ struct s_map
 	char		char_full;
 };
 
-/* Declaration of debug.c functions [temporary things]*/
-void				ft_print_array(int size, int	**array);
-void				ft_print_array_clean(int size, int	**array,
-						struct s_resolve resolve);
-
 /* Decalaration of utils.c functions */
 int					ft_strlen(char *str);
 int					ft_is_int(char c);
@@ -48,6 +43,8 @@ char				*ft_file_content(char *path);
 int					ft_min3(int a, int b, int c);
 void				ft_del_char(char *str, int x, int y);
 int					**ft_allocate_map(int size);
+int					ft_check_line_map(char *str);
+int					all_line_valid(char *str, struct s_map ref);
 
 /* decalaration of base.c functions */
 struct s_map		ft_set_map(struct s_map ref, char *content);
@@ -63,7 +60,12 @@ int long			ft_map_size(char *path);
 char				*ft_file_content(char *path);
 char				ft_get_empty_characters(char *content);
 
-/* [1] --> Lire le fichier passer en input et
-	le transformer en chaine de caractere */
-// ...
-// [4] --> faire le truc de l'entre standard
+/* Declaration of error.c functions */
+void				ft_free_map(int **array, int size);
+int					ft_char_valid(char c);
+int					ft_is_in(char *str, char c);
+int					ft_check_map(char *map, struct s_map ref);
+void				ft_error_message(int code);
+
+/* Declaration of read_standard.c functions */
+char				*ft_standard_content(void);
